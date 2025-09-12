@@ -4,39 +4,77 @@
     "slug": "Vivi_apk",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "viviapk",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "icon": "./assets/images/20250708_005331(1).png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/20250708_005331(1).png",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "این برنامه برای ارائه خدمات بهتر نیاز به دسترسی به موقعیت مکانی شما دارد",
+        "NSMicrophoneUsageDescription": "این برنامه برای جستجوی صوتی نیاز به دسترسی به میکروفن دارد",
+        "NSPhotoLibraryUsageDescription": "این برنامه برای انتخاب فایل نیاز به دسترسی به گالری دارد",
+        "NSCameraUsageDescription": "این برنامه برای عکسبرداری نیاز به دسترسی به دوربین دارد",
+        "NSUserNotificationsUsageDescription": "این برنامه برای استفاده از قابلیت وارد کردن کد ورودبه صورت اوتو ماتیک به دسترسیی پیام ها نیاز دارد"
+      }
     },
     "android": {
+      "package": "com.ebiii.viviapk",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/20250708_005331(1).png",
+        "backgroundColor": "#FFFFFF"
       },
-      "edgeToEdgeEnabled": true
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "plugins": [
-      "expo-router",
       [
-        "expo-splash-screen",
+        "expo-location",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "locationAlwaysAndWhenInUsePermission": "اجازه دسترسی به موقعیت مکانی برای ارائه خدمات بهتر"
+        }
+      ],
+      [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "Production"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "اجازه دسترسی به گالری برای انتخاب عکس",
+          "cameraPermission": "اجازه دسترسی به دوربین برای عکسبرداری"
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "اجازه دسترسی به میکروفن برای جستجوی صوتی"
         }
       ]
     ],
-    "experiments": {
-      "typedRoutes": true
+    "androidStatusBar": {
+      "backgroundColor": "#0066cc",
+      "barStyle": "light-content"
+    },
+    "backgroundColor": "#0066cc",
+    "extra": {
+      "eas": {
+        "projectId": "93836f9e-e2f7-4f28-8cb5-21a42a899999"
+      }
     }
   }
 }
